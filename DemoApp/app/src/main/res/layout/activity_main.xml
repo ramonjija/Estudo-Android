@@ -16,20 +16,20 @@
         android:background="#2aff09"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="TextView"
+        android:text="My Great APP!"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/black"
         android:textSize="50sp"
-        android:typeface="normal"
-        tools:text="My Great APP!" />
+        android:typeface="normal" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="44dp"
         android:onClick="showInfo"
         android:text="Toast It!" />
 
@@ -45,5 +45,22 @@
         android:ems="10"
         android:hint="Write Something..."
         android:inputType="textPersonName" />
+
+    <ImageView
+        android:id="@+id/idImgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/image1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/idImgView"
+        android:layout_alignTop="@+id/button"
+        android:onClick="changeImage"
+        android:text="Change" />
 
 </RelativeLayout>
