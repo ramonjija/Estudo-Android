@@ -45,24 +45,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkMyNumber() {
-        val inputtedNumber = findViewById<EditText>(R.id.idEditTextNumber).text.toString().toInt();
-        val MyNumber = MyNumber();
-        MyNumber.number = inputtedNumber;
-        if(MyNumber.isTriangular()) {
-            if(MyNumber.isSquared()) {
-                makeText("The Number is Triangular and Squared");
+        val editTextValue = findViewById<EditText>(R.id.idEditTextNumber).text;
+        if(!editTextValue.toString().isNullOrEmpty()) {
+            val inputtedNumber = editTextValue.toString().toInt();
+            val myNumber = MyNumber();
+            myNumber.number = inputtedNumber;
+            if(myNumber.isTriangular()) {
+                if(myNumber.isSquared()) {
+                    makeText("The Number is Triangular and Squared");
+                } else {
+                    makeText("The Number is Triangular");
+                }
+            } else if(myNumber.isSquared()){
+                if(myNumber.isTriangular()) {
+                    makeText("The Number is Triangular and Squared");
+                } else {
+                    makeText("The Number is Squared");
+                }
             } else {
-                makeText("The Number is Triangular");
+                makeText("The Number is not Triangular nor Squared");
             }
-        } else if(MyNumber.isSquared()){
-            if(MyNumber.isTriangular()) {
-                makeText("The Number is Triangular and Squared");
-            } else {
-                makeText("The Number is Squared");
-            }
-        } else {
-            makeText("The Number is not Triangular nor Squared");
         }
+
     }
 
     private fun makeText(text:String) {
