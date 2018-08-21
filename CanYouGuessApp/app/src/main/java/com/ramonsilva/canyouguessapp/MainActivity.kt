@@ -10,8 +10,8 @@ import java.util.*
 import kotlin.math.nextTowards
 
 class MainActivity : AppCompatActivity() {
-    var finished  = false;
-    var rand = RandNumber();
+    private var finished  = false;
+    private var rand = RandNumber();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show();
                 } else {
                     message = "You're Right on the spot!";
-                    Toast.makeText(this@MainActivity, message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(this@MainActivity, message+" "+intEditText, Toast.LENGTH_LONG).show();
                     finished = true;
                 }
             }
@@ -48,6 +48,6 @@ class MainActivity : AppCompatActivity() {
     private fun RandNumber(): Int {
         val randNumber = Random();
         var randNumberFound = randNumber.nextInt(20) - 1;
-        return randNumberFound
+        return randNumberFound + 1;
     }
 }

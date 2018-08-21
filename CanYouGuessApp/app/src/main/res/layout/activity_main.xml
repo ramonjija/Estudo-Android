@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="108dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <Button
         android:id="@+id/idBtnGuess"
